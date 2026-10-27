@@ -16,3 +16,4 @@ int main()
     cout<<"a="<<a<<"b="<<b<<endl;
     return 0;
 }
+// НЕ РАБОТАЕТ
