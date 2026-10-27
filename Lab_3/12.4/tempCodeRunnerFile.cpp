@@ -1,0 +1,1 @@
+    int st1 = sqrt(width1 * width1 + heidth1 * heidth1);                        // Расчет гипотенузы (1 сторона)
