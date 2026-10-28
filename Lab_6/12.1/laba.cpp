@@ -18,11 +18,11 @@ using namespace std;
         { 
             
             {
-            cout << "Значение X              Значение F(x)" << endl;
+            cout << "Значение x              Значение f(x)" << endl;
             while  (x  <= max)
             { 
                 F = (x*x) + (9.5 / x) + sin(x*x*x);
-                if (x == 0)
+                if (round(x) == 0.0 && x>=0 && x<0.0000001)
             {
                 cout << "     0 - Недопустимое значение" << endl;
                 x = x + dx;
@@ -30,7 +30,7 @@ using namespace std;
 
             else 
             {
-                cout << "   " << x << "                    " << F << endl;
+                cout << "   " << x << "\t\t\t" << F << endl;
                 x = x + dx;
             }
 
@@ -40,7 +40,7 @@ using namespace std;
         }
 
         else
+        {
             cout << "Значение x  конечного не может быть меньше, чем x начальное. " << endl;
-
-        return 1;
+        }
     }
