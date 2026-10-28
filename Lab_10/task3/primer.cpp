@@ -18,4 +18,4 @@ int main()
     cout << "Perimeter = " << P << endl;
     cout << "Area = " << A << endl;
     return 0;
-} 
+}

@@ -16,25 +16,31 @@ using namespace std;
 
         if  (x <max)
         { 
-            if (x == 0)
+            
             {
-                cout << "0 - Недопустимое значение" << endl;
-                return 0;
-            }
-            else 
-            {
-            cout << "Значение F              Значение X" << endl;
+            cout << "Значение X              Значение F(x)" << endl;
             while  (x  <= max)
             { 
                 F = (x*x) + (9.5 / x) + sin(x*x*x);
-                cout << F << "                       " << x << endl;
+                if (x == 0)
+            {
+                cout << "     0 - Недопустимое значение" << endl;
                 x = x + dx;
             }
+
+            else 
+            {
+                cout << "   " << x << "                    " << F << endl;
+                x = x + dx;
+            }
+
+            }
+            
             }
         }
 
         else
-            cout << "------------------------" << endl;
+            cout << "Значение x  конечного не может быть меньше, чем x начальное. " << endl;
 
         return 1;
     }
