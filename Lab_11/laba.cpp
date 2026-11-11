@@ -9,7 +9,8 @@ double f(double x)
     return -3.5 * pow(x, 3) + 6.4 * x - 2.4;
 }
 
-int main() {
+int main()
+{
 
     SetConsoleCP(65001);
     SetConsoleOutputCP(65001);
