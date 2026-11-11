@@ -12,42 +12,45 @@ int main()
     SetConsoleOutputCP(65001);
 
     int n=0;
-
-    cout << "Введите количество строк n: "; cin >> n;
-
-    if (n>12 || n<=0)
+    bool found = false;
+    string got1;
+    do 
+    {
+        cout << "Введите количество строк n (до 12 (включая)): "; cin >> n;
+        if (n>12 || n<=0)
     {
         cout << "Введенное количество строк не совпадает с условиями." << endl;
-        return 1;
     }
+    }
+    while (n>12 || n<=0);
 
-    else 
+    cin.ignore();
+    vector<string> stroki;
+    vector<string> gotovoe;
+
+    cout << "Введите " << n << " строк(и), каждая не более 50 символов:\n";
+
+    for (int i = 0; i < n; ++i) 
     {
-        cin.ignore();
-        vector<string> stroki;
-
-        cout << "Введите " << n << " строк(и), каждая не более 50 символов:\n";
-
-            for (int i = 0; i < n; ++i) 
-            {
-                string s;
+        string s;
                 
-                while (true) 
-                {
-                    cout << "Строка " << i + 1 << ": ";
-                    getline(cin, s);
-                    if (s.length() <= 50) 
-                    {
-                        stroki.push_back(s);
-                        break;
-                    }
-                    cout << "Ошибка: длина строки не должна превышать 50 символов.\n";
-                }
+        while (true) 
+        {
+            cout << "Строка " << i + 1 << ": ";
+            getline(cin, s);
+            if (s.length() <= 50) 
+            {
+                stroki.push_back(s);
+                break;
             }
+
+            cout << "Ошибка: длина строки не должна превышать 50 символов.\n";
+
+        }
+    }
 
     cout << "\nСтроки, содержащие не менее 3 букв из набора W, G, D, F:\n";
 
-    // Проверка условий и вывод результата
     for (const auto& s : stroki) 
     {
         int count = 0;
@@ -59,14 +62,25 @@ int main()
             {
                 count++;
             }
-        }
 
-        if (count >= 3) {
-            cout << s << "\n";
         }
+            if (count >= 3)
+            {
+                got1 = s;
+                gotovoe.push_back(s);
+                found = true;
+            }
     }
-
+    for (const auto& line : gotovoe)
+        {
+            cout << line << "\n";
+        }
+        
+    if (found == false)
+    {
+        cout << "!!! Строк не найдено." << endl;
     }
 
     return 0;
+    
 }

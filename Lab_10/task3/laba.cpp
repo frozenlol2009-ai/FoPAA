@@ -1,21 +1,28 @@
 #include <iostream>
 using namespace std;
 
-void F(int N, int& First, int& Last)
-{
-    // P=(a+b)*2;
-    // A=a*b;
-}
+void F(int N, int& first, int& last) 
+{ 
+    last = N % 10;
 
-int main()
-{
-    double x=2.5; double y=2.0;
-    double P;
-    double A;
+    while(N>=10)
+    {
+        N = N/10;
+    }
+    first = N;
+} 
 
-    // P_and_A(x,y,P,A);
-
-    cout << "Perimeter = " << P << endl;
-    cout << "Area = " << A << endl;
-    return 0;
+int main() 
+{ 
+    int N = 387;
+    int first = 0;
+    int last= 0;
+ 
+ //Вызов функции 
+    F(N, first, last); 
+ 
+ //Вывод значений периметра и площади 
+ cout << "First  = " << first << endl; 
+ cout << "Last = " << last << endl; 
+ return 0; 
 }
