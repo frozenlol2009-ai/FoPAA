@@ -18,11 +18,12 @@ int main()
     int first = 0;
     int last= 0;
  
- //Вызов функции 
+
     F(N, first, last); 
  
- //Вывод значений периметра и площади 
- cout << "First  = " << first << endl; 
- cout << "Last = " << last << endl; 
- return 0; 
+    cout << "First  = " << first << endl; 
+    cout << "Last = " << last << endl; 
+    
+    return 0; 
+
 }
